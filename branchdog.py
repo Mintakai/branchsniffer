@@ -18,9 +18,10 @@ def get_repo_path() -> str:
     return repo_path
 
 REPO_PATH = get_repo_path()
+title = REPO_PATH.split('/')
 
 main_window = Tk()
-main_window.title("BranchDog v0.1")
+main_window.title(f"BranchDog v0.1 - Repo: {title[-1]}")
 main_window.attributes('-topmost', True)
 
 # Get the current active shorthand branch name as a string
@@ -46,7 +47,7 @@ def determine_master(branch_name: str) -> bool:
 branch_name = get_branch_name()
 
 main_text = Label(main_window, text=f"Currently selected repo: {branch_name}")
-main_text.configure(font=("Terminal", 16, BOLD), bg="grey")
+main_text.configure(font=("Terminal", 12, BOLD), bg="grey")
 main_text.pack()
 
 update_repo()
