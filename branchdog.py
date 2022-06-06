@@ -2,7 +2,6 @@ import re
 import sys
 from tkinter import filedialog
 from tkinter import *
-from tkinter.font import BOLD
 from pygit2 import Repository, GitError
 from pygit2 import *
 import os
@@ -47,7 +46,7 @@ def determine_master(branch_name: str) -> bool:
 branch_name = get_branch_name()
 
 main_text = Label(main_window, text=f"Currently selected repo: {branch_name}")
-main_text.configure(font=("Terminal", 12, BOLD), bg="grey")
+main_text.configure(font=("Terminal", 12), bg="grey")
 main_text.pack()
 
 update_repo()
